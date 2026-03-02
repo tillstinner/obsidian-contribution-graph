@@ -58,6 +58,9 @@ toDate: '2023-12-01'
 dateField: 'createTime' # use customized field to genrate charts
 query: '#project' # list all fils which contains `project` tag
 ```
+
+For task data sources, you can also set `dateField` to a task property (for example `text`).
+When the field contains an ISO date string like `2026-02-07` anywhere in the value, the chart will use that date.
 ### Start Of Week
 
 As default, charts start with sunday as the first day of the week. You can change this by changing `startOfWeek`(only work in week-track and calendar view).

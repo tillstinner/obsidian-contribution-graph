@@ -217,6 +217,14 @@ export abstract class BaseDataviewDataSourceQuery {
 			if (dateTime.isValid) {
 				return dateTime;
 			}
+
+			const isoDateMatch = date.match(/\b\d{4}-\d{2}-\d{2}\b/);
+			if (isoDateMatch) {
+				dateTime = DateTime.fromISO(isoDateMatch[0]);
+				if (dateTime.isValid) {
+					return dateTime;
+				}
+			}
 		} catch (e) {
 			console.warn(
 				"can't parse date, it's a valid format? " +
